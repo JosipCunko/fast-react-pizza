@@ -6,8 +6,10 @@ import CreateOrder, {
   action as createOrderAction,
 } from "./features/order/CreateOrder";
 import Order, { loader as orderLoader } from "./features/order/Order";
+import { action as updateOrderAction } from "./features/order/UpdateOrder";
 import AppLayout from "./ui/AppLayout";
 import Error from "./ui/Error";
+
 //Data fetching, load and submit(forms) data only possible react router 6.4 when using this approach -- data loaders, data fetchers or data actions
 const router = createBrowserRouter([
   {
@@ -38,6 +40,8 @@ const router = createBrowserRouter([
         element: <Order />,
         loader: orderLoader,
         errorElement: <Error />,
+        //Not really on this page, but in the child component in this page
+        action: updateOrderAction,
       },
     ],
   },
