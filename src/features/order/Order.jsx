@@ -38,23 +38,25 @@ function Order() {
 
   return (
     <div className="flex flex-col gap-4 px-1 py-5">
-      <div className="mb-3 flex gap-2">
-        <h3 className="mr-auto text-lg font-semibold">
+      <div className="mb-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center">
+        <h3 className="mr-auto text-pretty text-lg font-semibold">
           Order <span className="border-b-2 border-black">#{id}</span> for
           customer {customer}
         </h3>
 
-        {priority && (
-          <span className="rounded-full bg-red-500 px-3 py-1 font-semibold text-white">
-            Priority
+        <div className="flex gap-2">
+          {priority && (
+            <span className="rounded-full bg-red-500 px-3 py-1 font-semibold text-white">
+              Priority
+            </span>
+          )}
+          <span className="text-nowrap rounded-full bg-green-500 px-3 py-1 font-semibold capitalize text-white">
+            {status} order
           </span>
-        )}
-        <span className="rounded-full bg-green-500 px-3 py-1 font-semibold capitalize text-white">
-          {status} order
-        </span>
+        </div>
       </div>
 
-      <div className="relative flex items-center justify-between overflow-hidden rounded-2xl border-[5px] border-yellow-500 border-opacity-20 px-5 py-6">
+      <div className="relative flex flex-col items-start overflow-hidden rounded-2xl border-[5px] border-yellow-500 border-opacity-20 px-5 py-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="font-semibold">
           {status === "delivered"
             ? "Order should have arrived"

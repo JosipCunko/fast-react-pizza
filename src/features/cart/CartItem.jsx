@@ -9,7 +9,7 @@ function CartItem({ pizza }) {
   const dispatch = useDispatch();
 
   return (
-    <li className="flex w-full items-center px-0 py-3 sm:px-3 sm:py-6">
+    <li className="grid w-full grid-rows-2 items-center px-0 py-3 sm:flex sm:px-3 sm:py-6">
       <div className="mr-auto">
         {pizza.quantity}&times; {pizza.name}
       </div>

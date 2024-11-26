@@ -16,7 +16,10 @@ function Header() {
 
   return (
     <header className="flex items-center gap-7 bg-yellow-500 px-3 py-2">
-      <Link to="/menu" className="mr-auto text-sm font-semibold md:text-lg">
+      <Link
+        to="/menu"
+        className="mr-auto min-w-[10ch] text-sm font-semibold md:text-lg"
+      >
         Fast React Pizza Co.
       </Link>
       <form onSubmit={handleSubmit}>

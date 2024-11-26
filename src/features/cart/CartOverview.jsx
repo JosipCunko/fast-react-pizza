@@ -17,7 +17,7 @@ function CartOverview() {
   return (
     <Link
       to="/cart"
-      className="absolute -right-3 bottom-3 flex scale-[0.8] items-center justify-between gap-4 rounded-full bg-yellow-500 px-4 py-3 text-xl tracking-tight text-gray-100 transition-all duration-200 hover:scale-105 sm:bottom-4 sm:right-8 sm:scale-100"
+      className="absolute -right-3 bottom-3 flex scale-[0.8] items-center justify-between gap-4 rounded-full bg-yellow-500 px-4 py-3 text-xl tracking-tight text-gray-100 transition-all duration-200 sm:bottom-4 sm:right-8 sm:scale-100 sm:hover:scale-105"
     >
       <FontAwesomeIcon
         icon={faCartShopping}

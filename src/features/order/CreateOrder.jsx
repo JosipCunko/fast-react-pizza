@@ -40,7 +40,7 @@ function CreateOrder() {
 
       <Form
         method="POST"
-        className={`grid grid-cols-[max-content_1fr_min-content] grid-rows-5 items-center p-4 ${status === "error" || formErrors?.phone ? "gap-x-7 gap-y-0" : "gap-7"} `}
+        className={`grid grid-cols-1 grid-rows-8 items-center p-4 sm:grid-cols-[max-content_1fr_min-content] sm:grid-rows-5 ${status === "error" || formErrors?.phone ? "max-h-[55vh] gap-x-5 gap-y-0 sm:gap-x-7" : "gap-x-2 gap-y-1 sm:gap-7"} `}
       >
         <label htmlFor="name" className="w-max font-semibold">
           First Name
@@ -73,10 +73,10 @@ function CreateOrder() {
           )}
         </div>
 
-        <label htmlFor="address" className="w-max font-semibold">
+        <label htmlFor="address" className="col-start-1 w-max font-semibold">
           Adress
         </label>
-        <div className="relative w-full">
+        <div className="relative row-start-6 row-end-7 sm:col-span-1 sm:col-start-2 sm:row-start-3 sm:row-end-4">
           <input
             required
             id="address"
@@ -94,7 +94,7 @@ function CreateOrder() {
           )}
 
           {!position.latitude && !position.longitude && (
-            <span className="absolute -right-6 top-[5px]">
+            <span className="absolute -right-6 top-[2px] sm:top-[3px] md:top-[5px]">
               <Button
                 onClick={(e) => {
                   e.preventDefault();
@@ -135,12 +135,13 @@ function CreateOrder() {
                 : ""
             }
           />
-
-          <Button type="primary" disabled={isSubmitting || isLoading}>
-            {isSubmitting
-              ? "Placing order..."
-              : `Order now for ${formatCurrency(totalPrice)}`}
-          </Button>
+          <div className="col-span-2">
+            <Button type="primary" disabled={isSubmitting || isLoading}>
+              {isSubmitting
+                ? "Placing order..."
+                : `Order now for ${formatCurrency(totalPrice)}`}
+            </Button>
+          </div>
         </div>
       </Form>
     </div>
